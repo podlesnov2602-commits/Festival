@@ -1,633 +1,937 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>SUNWAVE FEST 2026 — Sponsors Final Deck</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SUNWAVE FEST 2026 — Инвесторский лендинг для партнёров</title>
+  <meta name="description" content="SUNWAVE FEST 2026 — премиальный музыкальный фестиваль на берегу. Партнёрство, медиакит и измеримые KPI для брендов." />
+  <meta property="og:title" content="SUNWAVE FEST 2026 — Партнёрская презентация" />
+  <meta property="og:description" content="Премиальный фестиваль с высоким охватом, узнаваемостью и data-driven KPI для брендов и спонсоров." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80" />
+  <meta property="og:locale" content="ru_RU" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #050b14;
+      --surface: rgba(255, 255, 255, 0.04);
+      --surface-strong: rgba(255, 255, 255, 0.08);
+      --primary: #ff8c42;
+      --secondary: #00c2c7;
+      --accent: #f4e9d8;
+      --text: #f9f3e8;
+      --muted: rgba(249, 243, 232, 0.68);
+      --line: rgba(244, 233, 216, 0.16);
+      --shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --container: min(1200px, 92vw);
+      --title: clamp(44px, 6vw, 84px);
+      --subtitle: clamp(22px, 2.5vw, 36px);
+      --h2: clamp(32px, 4vw, 52px);
+      --h3: clamp(20px, 2vw, 28px);
+      --body: clamp(15px, 1.6vw, 18px);
+      --space-xl: clamp(48px, 9vw, 120px);
+      --space-lg: clamp(32px, 6vw, 80px);
+      --space-md: clamp(20px, 3vw, 40px);
+      --space-sm: clamp(14px, 2vw, 24px);
+    }
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-<style>
-:root{
-  --orange:#FF8C42;
-  --ocean:#061423;
-  --sand:#F4E9D8;
-  --turq:#00C2C7;
-  --line:rgba(244,233,216,.16);
-  --shadow:0 22px 70px rgba(0,0,0,.55);
-  --r:24px;
-  --muted:rgba(244,233,216,.78);
-}
-body{
-  margin:0;
-  background:
-    radial-gradient(1200px 700px at 10% -10%, rgba(255,140,66,.18), transparent 60%),
-    radial-gradient(900px 650px at 86% 0%, rgba(0,194,199,.14), transparent 60%),
-    linear-gradient(180deg,#040A12,var(--ocean));
-  color:var(--sand);
-  font-family:Inter,system-ui,Arial;
-}
-.reveal{font-size:22px}
-.reveal .slides section{ text-align:left; }
-.reveal h1,h2,h3{font-family:"Bebas Neue",Inter;letter-spacing:1px;margin:0 0 12px}
-.reveal h1{font-size:76px; line-height:.95}
-.reveal h2{font-size:54px; line-height:1.0}
-.reveal p{line-height:1.32; margin:0 0 12px; color:rgba(244,233,216,.92)}
-.small{font-size:16px;color:var(--muted)}
-.xs{font-size:13px;color:rgba(244,233,216,.62)}
-.accent{color:var(--orange)}
-.turq{color:var(--turq)}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.badge{
-  display:inline-flex; align-items:center; gap:10px;
-  padding:10px 16px;
-  border-radius:999px;
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.05);
-  font-weight:900;
-  text-transform:uppercase;
-  letter-spacing:.35px;
-  font-size:13px;
-}
-.dot{
-  width:10px;height:10px;border-radius:99px;
-  background:var(--orange);
-  box-shadow:0 0 0 6px rgba(255,140,66,.16);
-}
-.card{
-  border:1px solid var(--line);
-  border-radius:var(--r);
-  padding:20px;
-  background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));
-  box-shadow:var(--shadow);
-}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.kpi{
-  border:1px solid rgba(244,233,216,.14);
-  border-radius:18px;
-  background:rgba(255,255,255,.04);
-  padding:14px 14px 12px;
-}
-.kpi b{display:block;font-size:28px;letter-spacing:-.3px}
-.kpi span{display:block;text-transform:uppercase;font-size:13px;opacity:.75;font-weight:850;letter-spacing:.25px}
-.tag{
-  display:inline-block;
-  padding:6px 10px;
-  border-radius:999px;
-  border:1px solid rgba(244,233,216,.14);
-  background:rgba(255,255,255,.04);
-  font-size:12px;
-  font-weight:950;
-  letter-spacing:.35px;
-  text-transform:uppercase;
-  margin-right:8px;
-}
-.photo{
-  min-height:640px;
-  border-radius:var(--r);
-  background:
-    linear-gradient(90deg,rgba(6,20,35,.88),rgba(6,20,35,.25)),
-    linear-gradient(180deg, rgba(255,140,66,.12), transparent 60%),
-    var(--img) center/cover no-repeat;
-  padding:50px;
-  box-shadow:var(--shadow);
-  border:1px solid rgba(244,233,216,.14);
-}
-table{
-  width:100%;
-  border-collapse:separate;
-  border-spacing:0;
-  overflow:hidden;
-  border-radius:18px;
-  border:1px solid rgba(244,233,216,.16);
-  background:rgba(255,255,255,.03);
-  font-size:18px;
-}
-th,td{padding:12px 14px;border-bottom:1px solid rgba(244,233,216,.10);vertical-align:top}
-th{
-  text-align:left;
-  background:linear-gradient(90deg, rgba(255,140,66,.14), rgba(0,194,199,.08));
-  font-weight:950;
-  text-transform:uppercase;
-  letter-spacing:.35px;
-  font-size:13px;
-}
-tr:last-child td{border-bottom:0}
-.right{text-align:right}
-.good{color:#9ef0c8;font-weight:950}
-.warn{color:#ffd3a3;font-weight:950}
+    body {
+      font-family: "Inter", system-ui, sans-serif;
+      background: radial-gradient(1200px 800px at 15% -10%, rgba(255, 140, 66, 0.18), transparent 60%),
+        radial-gradient(900px 700px at 85% -5%, rgba(0, 194, 199, 0.18), transparent 60%),
+        linear-gradient(180deg, #04080f, var(--bg));
+      color: var(--text);
+      line-height: 1.5;
+    }
 
-.map{
-  border-radius:22px;
-  border:1px solid rgba(244,233,216,.14);
-  background:
-    radial-gradient(800px 420px at 15% 25%, rgba(255,140,66,.18), transparent 55%),
-    radial-gradient(700px 420px at 85% 35%, rgba(0,194,199,.14), transparent 55%),
-    rgba(255,255,255,.03);
-  padding:18px;
-}
-.mapGrid{
-  display:grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap:14px;
-  align-items:stretch;
-}
-.mapCanvas{
-  border-radius:18px;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-  border:1px solid rgba(244,233,216,.12);
-  position:relative;
-  min-height:360px;
-  overflow:hidden;
-}
-.zone{
-  position:absolute;
-  border:1px solid rgba(244,233,216,.20);
-  border-radius:16px;
-  padding:10px 10px 8px;
-  background:rgba(6,20,35,.42);
-  backdrop-filter: blur(6px);
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:.25px;
-  text-transform:uppercase;
-}
-.zone b{display:block;font-size:13px;margin-bottom:2px}
-.zone span{display:block;font-size:11px;opacity:.78;font-weight:800;text-transform:none}
-.legend .kpi b{font-size:20px}
-@media (max-width: 1100px){
-  .grid2,.grid3,.mapGrid{grid-template-columns:1fr}
-  .reveal h1{font-size:60px}
-  .reveal h2{font-size:46px}
-}
-</style>
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: var(--container);
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: var(--space-xl) 0;
+      position: relative;
+    }
+
+    .section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(600px 400px at 20% 10%, rgba(255, 140, 66, 0.08), transparent 70%);
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      backdrop-filter: blur(16px);
+      background: rgba(5, 11, 20, 0.82);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      width: var(--container);
+      margin: 0 auto;
+      padding: 16px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 28px;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 14px;
+      background: linear-gradient(120deg, var(--primary), #ffb677);
+      color: #05080f;
+      box-shadow: 0 10px 30px rgba(255, 140, 66, 0.3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .cta.secondary {
+      background: transparent;
+      border: 1px solid var(--line);
+      color: var(--text);
+      box-shadow: none;
+    }
+
+    .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 36px rgba(255, 140, 66, 0.35);
+    }
+
+    .hero {
+      padding-top: 140px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 28px;
+      align-items: center;
+    }
+
+    .hero-content {
+      grid-column: span 7;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .hero-title {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: var(--title);
+      letter-spacing: 1px;
+      line-height: 0.95;
+    }
+
+    .hero-title span {
+      color: var(--primary);
+    }
+
+    .hero-subtitle {
+      font-size: var(--subtitle);
+      color: var(--accent);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 0.6px;
+    }
+
+    .hero-card {
+      grid-column: span 5;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg, rgba(5, 11, 20, 0.2), rgba(5, 11, 20, 0.85));
+    }
+
+    .hero-card img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .hero-card-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 28px;
+      z-index: 1;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--line);
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 0.4px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 0 6px rgba(255, 140, 66, 0.2);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .stat {
+      padding: 16px;
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      border: 1px solid var(--line);
+    }
+
+    .stat strong {
+      font-size: 28px;
+      display: block;
+    }
+
+    .stat span {
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 0.4px;
+      color: var(--muted);
+    }
+
+    .section-header {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: var(--space-md);
+    }
+
+    .section-header h2 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: var(--h2);
+      letter-spacing: 1px;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      max-width: 760px;
+      font-size: var(--body);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      padding: 24px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card h3 {
+      font-size: var(--h3);
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: var(--body);
+    }
+
+    .image-card {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--surface-strong);
+      height: 100%;
+    }
+
+    .image-card img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 18px;
+      padding: 18px 20px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .timeline-item strong {
+      font-size: 18px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .artist-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 18px;
+    }
+
+    .artist {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.04);
+      text-align: center;
+    }
+
+    .artist img {
+      height: 200px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .artist span {
+      display: block;
+      padding: 12px 10px 16px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .zones-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .package {
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.04);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .package .price {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .package ul {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+      color: var(--muted);
+      font-size: var(--body);
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 18px;
+    }
+
+    .metric {
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.04);
+      padding: 18px;
+    }
+
+    .metric strong {
+      font-size: 28px;
+    }
+
+    .metric span {
+      display: block;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 0.4px;
+      color: var(--muted);
+    }
+
+    .form {
+      display: grid;
+      gap: 12px;
+    }
+
+    .form input,
+    .form textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text);
+      font-size: 15px;
+    }
+
+    .footer {
+      padding: 40px 0 60px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .scroll-top {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: rgba(5, 11, 20, 0.7);
+      color: var(--accent);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .scroll-top.visible {
+      opacity: 1;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-content,
+      .hero-card {
+        grid-column: span 12;
+      }
+
+      .grid-2,
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-inner {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links {
+        justify-content: center;
+      }
+
+      .hero {
+        padding-top: 180px;
+      }
+
+      .hero-meta {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
-
 <body>
-<div class="reveal"><div class="slides">
-
-<!-- 1 -->
-<section>
-  <div class="photo" style="--img:url('https://source.unsplash.com/1920x1080/?beach,festival,sunset,crowd')">
-    <span class="badge"><span class="dot"></span> Music • Sun • Waves</span>
-    <h1 style="margin-top:14px">SUNWAVE <span class="accent">FEST</span> 2026</h1>
-    <p class="small" style="max-width:980px">
-      Финальный deck для международных брендов. Премиальная серия beach-событий: закат → ночь, регулярность, измеримые KPI.
-    </p>
-    <div class="grid3" style="margin-top:14px;max-width:980px">
-      <div class="kpi"><b>24 даты</b><span>каждую ПТ/СБ</span></div>
-      <div class="kpi"><b>3–5 тыс</b><span>гостей / дата</span></div>
-      <div class="kpi"><b class="accent">#FF8C42</b><span>Sunset Orange</span></div>
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="logo">SUNWAVE FEST</div>
+      <nav class="nav-links">
+        <a href="#about">О фестивале</a>
+        <a href="#location">Локация</a>
+        <a href="#audience">Аудитория</a>
+        <a href="#program">Программа</a>
+        <a href="#packages">Пакеты</a>
+        <a href="#kpi">KPI</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <a class="cta" href="#contacts">Стать партнёром</a>
     </div>
-    <p class="xs" style="margin-top:10px">
-      Главный спонсор: <b>Red Bull</b>. Финтех-партнёр: <b>Kaspi</b>. Авто-партнёр: <b>BMW</b>.
-    </p>
-  </div>
-</section>
+  </header>
 
-<!-- 2 -->
-<section>
-  <h2>Вдохновение мира 2025</h2>
-  <div class="grid3">
-    <div class="card"><span class="tag">Ibiza</span><p><b>Sunset → Night</b><br/>свобода и вайб</p></div>
-    <div class="card"><span class="tag">Tomorrowland</span><p><b>Системность</b><br/>порядок, масштаб, сервис</p></div>
-    <div class="card"><span class="tag">Coachella</span><p><b>Lifestyle</b><br/>контент, арт, мода</p></div>
-    <div class="card"><span class="tag">Ultra</span><p><b>Ночь</b><br/>свет, звук, энергия</p></div>
-    <div class="card"><span class="tag">Boiler Room</span><p><b>Близость</b><br/>эффект «внутри тусовки»</p></div>
-  </div>
-  <p class="xs" style="margin-top:10px">
-    SUNWAVE — это лучший набор практик 2025, адаптированный под формат городского пляжа и регулярную сериальность.
-  </p>
-</section>
-
-<!-- 3 -->
-<section>
-  <h2>Формула SUNWAVE</h2>
-  <div class="card">
-    <p><b>Ibiza sunset</b> + <b>Coachella lifestyle</b> + <b>Ultra night energy</b> + <b>Tomorrowland системность</b> + <b>Boiler Room proximity</b></p>
-    <p class="accent"><b>= фестивальный сериал, который любят бренды</b></p>
-  </div>
-  <div class="grid3" style="margin-top:14px">
-    <div class="kpi"><b>Повторы</b><span>2–3 визита/лето</span></div>
-    <div class="kpi"><b>UGC</b><span>закат = пик контента</span></div>
-    <div class="kpi"><b>Измеримость</b><span>KPI + отчётность</span></div>
-  </div>
-</section>
-
-<!-- 4 -->
-<section>
-  <div class="photo" style="--img:url('https://source.unsplash.com/1920x1080/?beach,sea,sunset,party')">
-    <span class="badge"><span class="dot"></span> Season format</span>
-    <h2 style="margin-top:10px">Сезон и регулярность</h2>
-    <div class="card" style="max-width:1000px;margin-top:14px">
-      <div class="grid3">
-        <div class="kpi"><b>1 июня – 31 августа</b><span>лето 2026</span></div>
-        <div class="kpi"><b>Каждую ПТ/СБ</b><span>24 даты (опция)</span></div>
-        <div class="kpi"><b>Peak: июль</b><span>макс. спрос</span></div>
-      </div>
-      <p class="xs" style="margin-top:10px">
-        Фактически в период ПТ/СБ получается 26 дат; чтобы выдержать обещание “24 даты”, убираем 2 наименее сильные даты июня без потери логики бренда.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- 5 -->
-<section>
-  <h2>Аудитория и сегменты</h2>
-  <div class="grid3">
-    <div class="card">
-      <p><b>VIP (10–15%)</b><br/>столы/депозиты/сервис</p>
-      <p class="small">лучший обзор, отдельный вход, отдельный бар</p>
-    </div>
-    <div class="card">
-      <p><b>FAN / Middle (20–30%)</b><br/>апгрейд зона</p>
-      <p class="small">ближе к сцене, отдельная платформа, быстрый бар</p>
-    </div>
-    <div class="card">
-      <p><b>GENERAL (60–70%)</b><br/>главный трафик</p>
-      <p class="small">основной танцпол, бары, фудкорт, бренд-активации</p>
-    </div>
-  </div>
-  <div class="card" style="margin-top:14px">
-    <p class="small"><b>Для брендов:</b> VIP = премиум лиды, FAN = вовлечённость, GENERAL = охват и продажи.</p>
-  </div>
-</section>
-
-<!-- 6 -->
-<section>
-  <h2>Карта площадки и зоны брендов</h2>
-  <div class="map">
-    <div class="mapGrid">
-      <div class="mapCanvas">
-        <!-- zones -->
-        <div class="zone" style="left:18px;top:18px;width:42%">
-          <b>VIP Horizon</b><span>VIP вход • VIP bar • сервис</span>
+  <!-- A. Hero -->
+  <section class="section hero" id="hero">
+    <div class="container hero-grid">
+      <div class="hero-content reveal">
+        <span class="badge"><span class="dot"></span> Music • Sun • Waves</span>
+        <h1 class="hero-title">SUNWAVE <span>FEST 2026</span></h1>
+        <p class="hero-subtitle">Главный пляжный фестиваль сезона для брендов, которым нужны масштаб, эмоции и измеримые продажи.</p>
+        <div class="hero-meta">
+          <span>Июнь – август 2026</span>
+          <span>Городской пляж • [Город]</span>
+          <span>24 даты • Sunset → Night</span>
         </div>
-        <div class="zone" style="right:18px;top:18px;width:48%">
-          <b>Beach Drive by BMW</b><span>sunset line • фото • lounge</span>
-        </div>
-        <div class="zone" style="left:18px;bottom:18px;width:45%">
-          <b>Sunset Stage</b><span>LIVE прайм • закат • шоу</span>
-        </div>
-        <div class="zone" style="right:18px;bottom:18px;width:47%">
-          <b>Energy Arena by Red Bull</b><span>DJ night • drops • UGC</span>
-        </div>
-        <div class="zone" style="left:52%;top:46%;transform:translateX(-50%);width:46%">
-          <b>Kaspi Cashless</b><span>fast lane • QR • upgrade</span>
-        </div>
-        <div class="zone" style="left:18px;top:46%;width:30%">
-          <b>Hydration & Chill</b><span>water bar • refresh</span>
-        </div>
-        <div class="zone" style="right:18px;top:46%;width:30%">
-          <b>Main Bar</b><span>макс. оборот</span>
-        </div>
-      </div>
-      <div class="legend">
-        <div class="grid2">
-          <div class="kpi"><b>Red Bull</b><span>title / energy</span></div>
-          <div class="kpi"><b>Kaspi</b><span>cashless partner</span></div>
-          <div class="kpi"><b>BMW</b><span>auto lifestyle</span></div>
-          <div class="kpi"><b>Soft Drinks</b><span>hydration partner</span></div>
-        </div>
-        <p class="xs" style="margin-top:10px">
-          План даёт брендам “причины останавливаться”: зона → активность → контент → покупка.
+        <p style="color: var(--muted); font-size: var(--body);">
+          Инвесторская версия: максимальная видимость, data-driven KPI, прозрачная отчётность и сильный PR-эффект.
         </p>
+        <div style="display:flex; flex-wrap:wrap; gap:14px;">
+          <a class="cta" href="#packages">Партнёрство</a>
+          <a class="cta secondary" href="#contacts">Скачать медиакит</a>
+        </div>
+        <div class="stats-grid">
+          <div class="stat"><strong>[XX 000]</strong><span>Посетителей за сезон</span></div>
+          <div class="stat"><strong>[XX млн]</strong><span>Digital-охват</span></div>
+          <div class="stat"><strong>[XX%]</strong><span>Возврат гостей</span></div>
+        </div>
+      </div>
+      <div class="hero-card reveal">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80" alt="Толпа на фестивале у воды" loading="lazy" />
+        <div class="hero-card-content">
+          <p style="font-weight: 600; font-size: 18px;">Премиальная серия sunset-фестивалей с яркой ночной кульминацией.</p>
+          <p style="color: var(--muted);">Сильная инфраструктура брендов, медиа-партнёров и VIP-сервиса.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- 7 -->
-<section>
-  <h2>⚡ Red Bull — главный спонсор</h2>
-  <div class="card">
-    <p><b>Роль:</b> “Энергия фестиваля” — ночь, музыка, движение, драйв.</p>
-    <div class="grid2" style="margin-top:10px">
-      <div>
-        <p><span class="tag">ZONA</span> <b>Energy Arena by Red Bull</b></p>
-        <ul>
-          <li><b>DJ Drop Moment</b> (брендированный “момент перед дропом”)</li>
-          <li><b>Recharge Station</b> (зарядки + chill)</li>
-          <li><b>Energy Games</b> (скорость/реакция/баттлы)</li>
-          <li><b>Sampling Cold Cans</b> + QR розыгрыши</li>
-        </ul>
+  <!-- B. О фестивале -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>О фестивале</h2>
+        <p>Sunwave Fest — это фестивальный сериал мирового уровня: продуманная драматургия заката, мощный ночной блок и премиальный lifestyle-контент, который обеспечивает максимальную вовлечённость аудитории и качество контакта с брендом.</p>
       </div>
-      <div>
-        <p><span class="tag">CONTENT</span> UGC-механики</p>
-        <ul>
-          <li>slow-motion камера + branded frame</li>
-          <li>Reels/TikTok “Energy of the Sunset”</li>
-          <li>инфлюенс-сессии в Energy Arena</li>
-        </ul>
-        <div class="kpi" style="margin-top:10px"><b class="accent">KPI</b><span>контакты • охват • ER • UGC</span></div>
+      <div class="grid-2">
+        <div class="card reveal">
+          <h3>Концепция и формат</h3>
+          <p>Модель «sunset → night»: дневной релакс переходит в вечернюю энергию. 24 регулярные даты создают эффект сериала, где аудитория возвращается 2–3 раза за сезон.</p>
+          <p>Сильный визуальный код, единая дизайн-система и чёткая логика бренд-зон позволяют партнёрам выделяться без визуального шума.</p>
+        </div>
+        <div class="image-card reveal">
+          <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1200&q=80" alt="Сцена фестиваля на закате" loading="lazy" />
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- 8 -->
-<section>
-  <h2>🏦 Kaspi — финтех-партнёр</h2>
-  <div class="card">
-    <p><b>Роль:</b> скорость, комфорт, cashless. Банк “делает фестиваль удобнее”.</p>
-    <div class="grid2" style="margin-top:10px">
-      <div>
-        <p><span class="tag">ZONA</span> <b>Kaspi Cashless Fast Lane</b></p>
-        <ul>
-          <li>отдельный вход Fast Entry</li>
-          <li>QR/NFC оплата на барах</li>
-          <li>VIP Upgrade Desk (апгрейды за оплату)</li>
-        </ul>
+  <!-- C. Локация -->
+  <section class="section" id="location">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Локация</h2>
+        <p>Пляжная площадка с высокой транспортной доступностью, видом на воду и современной инфраструктурой. Идеальное место для премиальных активаций и брендированного контента.</p>
       </div>
-      <div>
-        <p><span class="tag">MOTIVATION</span> промо</p>
-        <ul>
-          <li>кешбэк на билеты/бар</li>
-          <li>“Оплати — получи апгрейд”</li>
-          <li>активации “smart lifestyle”</li>
-        </ul>
-        <div class="kpi" style="margin-top:10px"><b class="turq">KPI</b><span>транзакции • регистрации • установки</span></div>
+      <div class="grid-2">
+        <div class="card reveal">
+          <h3>Инфраструктура</h3>
+          <p>• 2 сцены: Sunset Stage и Energy Arena.</p>
+          <p>• VIP-терраса с лучшим обзором, закрытыми барами и сервисом.</p>
+          <p>• 8+ бренд-зон, fast-lane, cashless, фотозоны и lounge-площадки.</p>
+          <p>• Спроектированные маршруты гостя: вход → активации → покупки → контент.</p>
+        </div>
+        <div class="image-card reveal">
+          <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=80" alt="Пляжная площадка фестиваля" loading="lazy" />
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- 9 -->
-<section>
-  <h2>🚗 BMW — авто-партнёр</h2>
-  <div class="card">
-    <p><b>Роль:</b> премиальный lifestyle, свобода, закатный драйв.</p>
-    <div class="grid2" style="margin-top:10px">
-      <div>
-        <p><span class="tag">ZONA</span> <b>Beach Drive Experience by BMW</b></p>
-        <ul>
-          <li>2–4 авто на “sunset line”</li>
-          <li>Golden Hour фотозона</li>
-          <li>брендированный lounge + сервис</li>
-        </ul>
+  <!-- D. Аудитория -->
+  <section class="section" id="audience">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Аудитория</h2>
+        <p>Платёжеспособные горожане 21–38, ориентированные на lifestyle, технологичность и тренды. Аудитория активна в digital, готова к новым брендам и ценит сервис.</p>
       </div>
-      <div>
-        <p><span class="tag">ACTIVATION</span> лиды</p>
-        <ul>
-          <li>QR-лидформа + “VIP ride / shuttle”</li>
-          <li>VR test drive / digital test drive</li>
-          <li>инфлюенсеры и контент-съёмки</li>
-        </ul>
-        <div class="kpi" style="margin-top:10px"><b class="accent">KPI</b><span>лиды • тест-драйвы • brand love</span></div>
+      <div class="grid-3">
+        <div class="card reveal">
+          <h3>VIP</h3>
+          <p>10–15% аудитории. Высокий чек, премиум-привычки, интерес к статусным продуктам и сервисам.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Middle / FAN</h3>
+          <p>20–30% аудитории. Максимальная вовлечённость, активное потребление контента и участие в бренд-активациях.</p>
+        </div>
+        <div class="card reveal">
+          <h3>General</h3>
+          <p>60–70% аудитории. Главный трафик, охват и генерация продаж для FMCG, fintech и lifestyle-брендов.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- 10 -->
-<section>
-  <h2>🥤 Безалкогольные напитки</h2>
-  <div class="card">
-    <p><b>Роль:</b> забота, комфорт, “чистый” бренд-вайб, гидратация.</p>
-    <div class="grid2" style="margin-top:10px">
-      <div>
-        <p><span class="tag">ZONA</span> <b>Hydration & Chill</b></p>
-        <ul>
-          <li>water bar + refresh points</li>
-          <li>тень/пуфы/вода/зарядки</li>
-          <li>“Sunset Refresh Hour”</li>
-        </ul>
+  <!-- E. Программа -->
+  <section class="section" id="program">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Программа и тайминг</h2>
+        <p>Каждый вечер — чёткая драматургия, удобная для спонсорских интеграций и контент-планирования.</p>
       </div>
-      <div>
-        <p><span class="tag">KPI</span> простые и понятные</p>
-        <ul>
-          <li>выдачи/пробы</li>
-          <li>охват и упоминания</li>
-          <li>NPS (комфорт)</li>
-        </ul>
-        <div class="kpi" style="margin-top:10px"><b class="turq">Brand Safety</b><span>wellness и комфорт</span></div>
+      <div class="grid-2">
+        <div class="timeline reveal">
+          <div class="timeline-item">
+            <strong>17:00–19:00</strong>
+            <div>
+              <h3>Warm-up & Lifestyle</h3>
+              <p>DJ-сеты, welcome-зоны, fashion-активации, старт бренд-механик и cashless-потоки.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <strong>19:00–21:00</strong>
+            <div>
+              <h3>Sunset Prime</h3>
+              <p>Главный контентный пик. Премиальные активации, имиджевые интеграции, визуальный максимум.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <strong>21:00–01:00</strong>
+            <div>
+              <h3>Night Energy</h3>
+              <p>Хедлайнеры, клубный драйв, самый высокий ER и UGC. Пиковые продажи на барах.</p>
+            </div>
+          </div>
+        </div>
+        <div class="image-card reveal">
+          <img src="https://images.unsplash.com/photo-1501612780327-45045538702b?auto=format&fit=crop&w=1200&q=80" alt="Ночной лайв-сет на сцене" loading="lazy" />
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- 11 -->
-<section>
-  <h2>Бары и точки продаж</h2>
-  <div class="grid3">
-    <div class="card"><b>Main Bar</b><br/><span class="small">макс. оборот, 2–3 линии</span></div>
-    <div class="card"><b>Energy Point</b><br/><span class="small">быстрый товар, высокая частота</span></div>
-    <div class="card"><b>Hydration Bar</b><br/><span class="small">забота, комфорт, бренд safety</span></div>
-    <div class="card"><b>VIP Bar</b><br/><span class="small">премиум сервис, средний чек</span></div>
-    <div class="card"><b>Chill Cocktail</b><br/><span class="small">апсейл и атмосфера</span></div>
-  </div>
-  <p class="xs" style="margin-top:10px">
-    В логике 2025: бар — это не касса, а <b>бренд-опыт</b>.
-  </p>
-</section>
-
-<!-- 12 -->
-<section>
-  <h2>Прайм-моменты для контента</h2>
-  <div class="card">
-    <div class="grid3">
-      <div class="kpi"><b>18:30–20:30</b><span>Sunset (UGC peak)</span></div>
-      <div class="kpi"><b>21:00–23:00</b><span>Prime (LIVE/DJ)</span></div>
-      <div class="kpi"><b>23:00–01:00</b><span>After (Energy Arena)</span></div>
-    </div>
-    <p class="small" style="margin-top:10px">
-      Встроенные “brand moments” не мешают тусовке, а усиливают её — это стандарт лучших тусовок мира.
-    </p>
-  </div>
-</section>
-
-<!-- 13 -->
-<section>
-  <h2>Пакеты и ценники</h2>
-  <div class="card">
-    <table>
-      <thead>
-        <tr>
-          <th>Пакет</th>
-          <th>Партнёр</th>
-          <th>Ключевое право</th>
-          <th class="right">Цена за сезон</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><b>Title Partner</b></td>
-          <td><b>Red Bull</b></td>
-          <td>Energy Arena + title-нейминг + топ-видимость + контент-план</td>
-          <td class="right"><b class="accent">180 000 000 ₸</b></td>
-        </tr>
-        <tr>
-          <td><b>Fintech Partner</b></td>
-          <td><b>Kaspi</b></td>
-          <td>Cashless Fast Lane + QR/NFC + upgrade mechanics</td>
-          <td class="right"><b>95 000 000 ₸</b></td>
-        </tr>
-        <tr>
-          <td><b>Auto Lifestyle Partner</b></td>
-          <td><b>BMW</b></td>
-          <td>Beach Drive Experience + sunset photo line + leads</td>
-          <td class="right"><b>120 000 000 ₸</b></td>
-        </tr>
-        <tr>
-          <td><b>Hydration Partner</b></td>
-          <td><b>Soft Drinks</b></td>
-          <td>Hydration & Chill + refresh points + brand safety</td>
-          <td class="right"><b>60 000 000 ₸</b></td>
-        </tr>
-      </tbody>
-    </table>
-    <p class="xs" style="margin-top:10px">
-      В цену включены базовые продакшн-элементы зон. Сложные конструкции/VR/шоу-эффекты считаются отдельным бюджетом (по ТЗ).
-    </p>
-  </div>
-</section>
-
-<!-- 14 -->
-<section>
-  <h2>Пакеты по датам (если бренд хочет “пилот”)</h2>
-  <div class="card">
-    <table>
-      <thead>
-        <tr>
-          <th>Формат</th>
-          <th>Что входит</th>
-          <th class="right">Цена</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><b>Weekend Partner</b></td>
-          <td>брендирование уикенда (ПТ+СБ), зона + 2 контент-интеграции</td>
-          <td class="right"><b>18 000 000 ₸</b></td>
-        </tr>
-        <tr>
-          <td><b>Friday Takeover</b></td>
-          <td>пятница DJ Night: energy/UGC/fast sampling</td>
-          <td class="right"><b>7 500 000 ₸</b></td>
-        </tr>
-        <tr>
-          <td><b>Saturday Prime</b></td>
-          <td>суббота LIVE: VIP upgrade + premium moments</td>
-          <td class="right"><b>11 000 000 ₸</b></td>
-        </tr>
-      </tbody>
-    </table>
-    <p class="xs" style="margin-top:10px">
-      Эти пакеты удобны для международных брендов: “пробный запуск” → масштабирование до сезона.
-    </p>
-  </div>
-</section>
-
-<!-- 15 -->
-<section>
-  <h2>Deliverables бренду</h2>
-  <div class="card">
-    <table>
-      <thead>
-        <tr><th>Блок</th><th>Что отдаём</th><th class="right">KPI</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><b>On-site</b></td><td>зона, персонал, навигация, sampling/lead capture</td><td class="right">контакты/пробы/лиды</td></tr>
-        <tr><td><b>Digital</b></td><td>контент-план: Reels/TikTok/Stories + интеграции</td><td class="right">охват/ER/клики</td></tr>
-        <tr><td><b>PR</b></td><td>упоминания, партнёрские публикации, медиа-охват</td><td class="right">упоминания/медиа</td></tr>
-        <tr><td><b>Report</b></td><td>финальный отчёт: фото/видео архив + аналитика</td><td class="right">прозрачность</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<!-- 16 -->
-<section>
-  <h2>KPI-матрица по партнёрам</h2>
-  <div class="grid2">
-    <div class="card">
-      <p><b>Red Bull</b>: UGC + вовлечённость + sampling</p>
-      <p class="small">Фокус: ночь, контент, динамика</p>
-      <div class="kpi"><b class="accent">UGC / ER</b><span>главные метрики</span></div>
-    </div>
-    <div class="card">
-      <p><b>Kaspi</b>: транзакции + регистрации + установки</p>
-      <p class="small">Фокус: удобство, скорость, cashless</p>
-      <div class="kpi"><b class="turq">Conversions</b><span>главные метрики</span></div>
-    </div>
-    <div class="card">
-      <p><b>BMW</b>: лиды + тест-драйвы + brand love</p>
-      <p class="small">Фокус: premium lifestyle</p>
-      <div class="kpi"><b class="accent">Leads</b><span>главные метрики</span></div>
-    </div>
-    <div class="card">
-      <p><b>Soft Drinks</b>: выдачи + комфорт + brand safety</p>
-      <p class="small">Фокус: hydration & chill</p>
-      <div class="kpi"><b class="turq">NPS</b><span>главные метрики</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- 17 -->
-<section>
-  <div class="photo" style="--img:url('https://source.unsplash.com/1920x1080/?concert,night,lights')">
-    <span class="badge"><span class="dot"></span> Brand Safety</span>
-    <h2 style="margin-top:10px">Сервис и безопасность</h2>
-    <div class="card" style="max-width:1000px;margin-top:14px">
-      <div class="grid3">
-        <div class="kpi"><b>Контроль входа</b><span>fast lane + age policy</span></div>
-        <div class="kpi"><b>Медпункт</b><span>медицина и протоколы</span></div>
-        <div class="kpi"><b>Комфорт</b><span>вода • тень • навигация</span></div>
+  <!-- F. Артисты -->
+  <section class="section" id="lineup">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Лайн-ап артистов</h2>
+        <p>Микс международных и локальных артистов. Баланс live и DJ форматов для широкой аудитории.</p>
       </div>
-      <p class="xs" style="margin-top:10px">
-        Международные бренды ценят: предсказуемость, безопасность, прозрачность KPI и качество продакшна.
-      </p>
+      <div class="artist-grid">
+        <div class="artist reveal">
+          <img src="https://images.unsplash.com/photo-1487180144351-b8472da7d491?auto=format&fit=crop&w=800&q=80" alt="Артист на сцене" loading="lazy" />
+          <span>Headliner [Имя]</span>
+        </div>
+        <div class="artist reveal">
+          <img src="https://images.unsplash.com/photo-1464375117522-1311dd1d0b3b?auto=format&fit=crop&w=800&q=80" alt="DJ за пультом" loading="lazy" />
+          <span>DJ [Имя]</span>
+        </div>
+        <div class="artist reveal">
+          <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80" alt="Световое шоу" loading="lazy" />
+          <span>Live [Имя]</span>
+        </div>
+        <div class="artist reveal">
+          <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80" alt="Толпа в ночном клубе" loading="lazy" />
+          <span>Special Guest [Имя]</span>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- 18 -->
-<section>
-  <h2>Почему это “международный уровень”</h2>
-  <div class="grid3">
-    <div class="card"><b>Регулярность</b><br/><span class="small">платформа на сезон, не разовая вспышка</span></div>
-    <div class="card"><b>Контент</b><br/><span class="small">закат = самый дорогой момент</span></div>
-    <div class="card"><b>Бренд-опыт</b><br/><span class="small">зоны создают эмоции, а не шум</span></div>
-    <div class="card"><b>Сервис</b><br/><span class="small">VIP без пафоса — комфорт и вид</span></div>
-    <div class="card"><b>Измеримость</b><br/><span class="small">KPI + отчётность</span></div>
-  </div>
-</section>
-
-<!-- 19 -->
-<section>
-  <h2>Финальный оффер</h2>
-  <div class="card">
-    <p><b>Red Bull</b> — главный спонсор сезона: владеет ночной энергией и контентом.</p>
-    <p><b>Kaspi</b> — делает фестиваль удобным: cashless и fast-lane.</p>
-    <p><b>BMW</b> — задаёт премиальный lifestyle: sunset line, leads, experience.</p>
-    <p class="accent"><b>Цель:</b> бренд становится частью лучшего момента лета, а не просто размещением.</p>
-  </div>
-</section>
-
-<!-- 20 -->
-<section>
-  <div class="photo" style="--img:url('https://source.unsplash.com/1920x1080/?fireworks,beach,night,festival')">
-    <span class="badge"><span class="dot"></span> Music • Sun • Waves</span>
-    <h1 style="margin-top:14px">SUNWAVE <span class="accent">FEST</span> 2026</h1>
-    <p class="small">Готово для переговоров с международными брендами.</p>
-    <div class="grid3" style="margin-top:14px;max-width:980px">
-      <div class="kpi"><b>Red Bull</b><span>Title Partner</span></div>
-      <div class="kpi"><b>Kaspi</b><span>Cashless Partner</span></div>
-      <div class="kpi"><b>BMW</b><span>Auto Lifestyle</span></div>
+  <!-- G. Зоны и активности -->
+  <section class="section" id="zones">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Зоны и активности</h2>
+        <p>Бренды получают физические точки контакта и контентные площадки в ключевых потоках аудитории.</p>
+      </div>
+      <div class="zones-grid">
+        <div class="card reveal">
+          <h3>VIP Horizon</h3>
+          <p>Закрытая терраса, отдельный бар, персональный сервис, премиум-опыт для лидов.</p>
+        </div>
+        <div class="card reveal">
+          <h3>General & Fan Zone</h3>
+          <p>Максимальный трафик, fast-bar, массовые активации и продажи.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Brand Activation Hub</h3>
+          <p>Интерактивные стенды, product trials, VR/AR и персональные офферы.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Merch & Fashion</h3>
+          <p>Коллаборации, лимитированные дропы, брендированный мерч.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Food Court</h3>
+          <p>Премиальные концепции питания, sponsor-branded зоны сервиса.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Content & Photo</h3>
+          <p>Фото- и видео-точки с брендированным продакшном.</p>
+        </div>
+      </div>
     </div>
-    <p class="xs" style="margin-top:10px">Контакты: (вставьте имя/телефон/email)</p>
-  </div>
-</section>
+  </section>
 
-</div></div>
+  <!-- H. Пакеты спонсорства -->
+  <section class="section" id="packages">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Пакеты спонсорства</h2>
+        <p>Гибкая структура партнёрства — от титульного статуса до точечных активаций.</p>
+      </div>
+      <div class="grid-3">
+        <div class="package reveal">
+          <h3>Title Partner</h3>
+          <p class="price">[₸ XX млн]</p>
+          <ul>
+            <li>Эксклюзивный нейминг сезона</li>
+            <li>Главная сцена + брендированный контент</li>
+            <li>Полный медиапакет и KPI-аналитика</li>
+          </ul>
+        </div>
+        <div class="package reveal">
+          <h3>Main Partner</h3>
+          <p class="price">[₸ XX млн]</p>
+          <ul>
+            <li>Собственная зона + cashless/fast-lane</li>
+            <li>Digital-активации и лидогенерация</li>
+            <li>PR и интеграции с артистами</li>
+          </ul>
+        </div>
+        <div class="package reveal">
+          <h3>Official Partner</h3>
+          <p class="price">[₸ XX млн]</p>
+          <ul>
+            <li>Бренд-зона + sampling</li>
+            <li>Интеграции в контент-план</li>
+            <li>Медиарепорты и post-campaign</li>
+          </ul>
+        </div>
+        <div class="package reveal">
+          <h3>Support Partner</h3>
+          <p class="price">[₸ XX млн]</p>
+          <ul>
+            <li>Тематическая активация</li>
+            <li>Размещение на площадке</li>
+            <li>Отчётность по KPI</li>
+          </ul>
+        </div>
+        <div class="package reveal">
+          <h3>Weekend Partner</h3>
+          <p class="price">[₸ XX млн]</p>
+          <ul>
+            <li>Брендирование уикенда</li>
+            <li>2 ключевые интеграции</li>
+            <li>Контентный отчёт</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
-<script>
-Reveal.initialize({hash:true,transition:"fade",slideNumber:true,backgroundTransition:"fade"});
-</script>
+  <!-- I. Ожидаемые KPI -->
+  <section class="section" id="kpi">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Ожидаемые KPI</h2>
+        <p>Каждый партнёр получает понятные метрики: охват, контакты, продажи, медиа-влияние и ROI.</p>
+      </div>
+      <div class="metrics">
+        <div class="metric reveal"><strong>[XX 000]</strong><span>Посещаемость за сезон</span></div>
+        <div class="metric reveal"><strong>[XX млн]</strong><span>Digital & Social reach</span></div>
+        <div class="metric reveal"><strong>[XX 000]</strong><span>Контент-единиц UGC</span></div>
+        <div class="metric reveal"><strong>[XX млн]</strong><span>PR-эквивалент</span></div>
+        <div class="metric reveal"><strong>[XX 000]</strong><span>Собранные лиды</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- J. Команда -->
+  <section class="section" id="team">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Команда и организатор</h2>
+        <p>Опытная команда в продакшне, маркетинге и бренд-активациях. Реализовали [XX] масштабных ивентов, в портфеле — международные бренды и медиа-партнёры.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card reveal">
+          <h3>Доверие и репутация</h3>
+          <p>Портфель кейсов: городские фестивали, брендированные ивенты, клубные форматы. Стандарты безопасности, лицензии и согласования верифицированы.</p>
+        </div>
+        <div class="image-card reveal">
+          <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1200&q=80" alt="Команда на площадке фестиваля" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- K. Контакты -->
+  <section class="section" id="contacts">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Контакты и заявка</h2>
+        <p>Оставьте заявку — мы отправим медиакит, индивидуальные KPI и предложение под вашу категорию.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card reveal">
+          <h3>Связаться напрямую</h3>
+          <p>Коммерческий отдел: <strong>[Имя Фамилия]</strong></p>
+          <p>Телефон: <strong>+7 [XXX] [XXX-XX-XX]</strong></p>
+          <p>Email: <strong>partners@sunwavefest.com</strong></p>
+          <p>Медиа-партнёрства: <strong>media@sunwavefest.com</strong></p>
+          <div style="display:flex; gap:12px; margin-top:16px;">
+            <a class="cta" href="#hero">Получить медиакит</a>
+            <a class="cta secondary" href="#packages">Запросить оффер</a>
+          </div>
+        </div>
+        <form class="card form reveal">
+          <label>
+            <span>Имя и компания</span>
+            <input type="text" placeholder="Имя, должность, бренд" />
+          </label>
+          <label>
+            <span>Телефон</span>
+            <input type="tel" placeholder="+7 ___ ___ __ __" />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" placeholder="email@brand.com" />
+          </label>
+          <label>
+            <span>Комментарий</span>
+            <textarea rows="4" placeholder="Кратко опишите интерес к партнёрству"></textarea>
+          </label>
+          <button class="cta" type="submit">Отправить заявку</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>SUNWAVE FEST 2026. Все права защищены. Медиа и партнёрства на согласование.</p>
+    </div>
+  </footer>
+
+  <button class="scroll-top" aria-label="Наверх">↑</button>
+
+  <script>
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    revealElements.forEach((el) => observer.observe(el));
+
+    const scrollTopButton = document.querySelector('.scroll-top');
+    window.addEventListener('scroll', () => {
+      scrollTopButton.classList.toggle('visible', window.scrollY > 400);
+    });
+
+    scrollTopButton.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
