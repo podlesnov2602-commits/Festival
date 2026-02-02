@@ -1,486 +1,633 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Фасадный кирпич — продажа и доставка</title>
-  <meta name="description" content="Фасадный кирпич: каталог, цены, расчёт количества, доставка. Поможем подобрать цвет и фактуру, отправим прайс и образцы." />
-  <style>
-    :root{
-      --bg:#0b0f14;
-      --card:#101826;
-      --text:#eaf0ff;
-      --muted:#a9b6d6;
-      --line:rgba(255,255,255,.10);
-      --accent:#ff7a18;
-      --accent2:#3b82f6;
-      --ok:#22c55e;
-      --shadow:0 18px 60px rgba(0,0,0,.40);
-      --radius:20px;
-      --max:1120px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      color:var(--text);
-      background:
-        radial-gradient(1200px 700px at 15% -10%, rgba(255,122,24,.30), transparent 55%),
-        radial-gradient(1000px 650px at 85% 0%, rgba(59,130,246,.22), transparent 55%),
-        var(--bg);
-      line-height:1.35;
-    }
-    a{color:inherit; text-decoration:none}
-    .wrap{max-width:var(--max); margin:0 auto; padding:22px 16px 80px}
-    .nav{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(14px);
-      background: rgba(11,15,20,.65);
-      border-bottom:1px solid var(--line);
-    }
-    .navin{max-width:var(--max); margin:0 auto; padding:12px 16px; display:flex; gap:12px; align-items:center; justify-content:space-between}
-    .brand{display:flex; gap:10px; align-items:center; font-weight:900; letter-spacing:.2px}
-    .logo{width:36px; height:36px; border-radius:14px; background: linear-gradient(135deg, var(--accent), #ffd34d); box-shadow:0 16px 46px rgba(255,122,24,.25)}
-    .links{display:flex; gap:10px; flex-wrap:wrap; color:var(--muted); font-weight:700; font-size:14px}
-    .links a{padding:8px 10px; border-radius:14px}
-    .links a:hover{background:rgba(255,255,255,.06); color:var(--text)}
-    .btn{
-      display:inline-flex; gap:10px; align-items:center; justify-content:center;
-      padding:12px 14px; border-radius:14px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.06);
-      font-weight:900;
-      cursor:pointer;
-      transition: transform .15s ease, background .15s ease, border-color .15s ease;
-    }
-    .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.10); border-color:rgba(255,255,255,.18)}
-    .btn.primary{border:0; background:linear-gradient(135deg, var(--accent), #ffb703); box-shadow:0 18px 55px rgba(255,122,24,.25)}
-    .btn.blue{border:0; background:linear-gradient(135deg, var(--accent2), #60a5fa); box-shadow:0 18px 55px rgba(59,130,246,.20)}
-    .pill{display:inline-flex; gap:8px; align-items:center; padding:8px 12px; border-radius:999px; border:1px solid var(--line); background:rgba(255,255,255,.05); color:var(--muted); font-weight:900; font-size:13px}
-    .grid{display:grid; gap:14px; grid-template-columns:repeat(12,1fr)}
-    .card{
-      grid-column: span 12;
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      padding:18px;
-      box-shadow:var(--shadow);
-    }
-    .col6{grid-column: span 6}
-    .col4{grid-column: span 4}
-    .col8{grid-column: span 8}
-    .col3{grid-column: span 3}
-    @media(max-width:920px){ .col6,.col4,.col8,.col3{grid-column:span 12} .links{display:none} }
-    h1{margin:10px 0 10px; font-size:44px; line-height:1.05; letter-spacing:-.7px}
-    @media(max-width:520px){ h1{font-size:34px} }
-    .muted{color:var(--muted)}
-    .kpi{border:1px solid var(--line); background:rgba(255,255,255,.04); border-radius:18px; padding:14px; display:flex; flex-direction:column; gap:6px}
-    .kpi strong{font-size:20px}
-    .sectionTitle{display:flex; align-items:center; justify-content:space-between; gap:12px}
-    .sectionTitle h2{margin:0; font-size:22px}
-    .tag{display:inline-flex; padding:6px 10px; border-radius:999px; border:1px solid var(--line); background:rgba(255,255,255,.05); color:var(--muted); font-weight:900; font-size:12px; white-space:nowrap}
-    .filters{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
-    select,input{
-      appearance:none;
-      background:rgba(255,255,255,.06);
-      border:1px solid var(--line);
-      color:var(--text);
-      border-radius:14px;
-      padding:12px 12px;
-      font-weight:800;
-      outline:none;
-    }
-    input::placeholder{color:rgba(169,182,214,.75)}
-    .products{display:grid; gap:12px; margin-top:12px; grid-template-columns:repeat(12,1fr)}
-    .p{grid-column:span 4; border:1px solid var(--line); background:rgba(255,255,255,.04); border-radius:18px; padding:14px}
-    @media(max-width:920px){ .p{grid-column:span 12} }
-    .img{
-      height:150px; border-radius:14px;
-      background: linear-gradient(135deg, rgba(255,122,24,.35), rgba(59,130,246,.22));
-      border:1px dashed rgba(255,255,255,.18);
-      display:flex; align-items:center; justify-content:center;
-      color:rgba(255,255,255,.85);
-      font-weight:900;
-      margin-bottom:10px;
-    }
-    .p b{display:block; margin-bottom:6px}
-    .row{display:flex; justify-content:space-between; gap:10px; margin-top:10px; flex-wrap:wrap}
-    .price{font-size:18px; font-weight:900}
-    .mini{font-size:13px}
-    .two{display:grid; gap:12px; grid-template-columns:1fr 1fr}
-    @media(max-width:920px){ .two{grid-template-columns:1fr} }
-    textarea{
-      width:100%;
-      min-height:92px;
-      resize:vertical;
-      background:rgba(255,255,255,.06);
-      border:1px solid var(--line);
-      color:var(--text);
-      border-radius:14px;
-      padding:12px;
-      font-weight:700;
-      outline:none;
-    }
-    .faq details{border:1px solid var(--line); border-radius:16px; padding:14px; background:rgba(255,255,255,.04)}
-    .faq details + details{margin-top:10px}
-    .faq summary{cursor:pointer; font-weight:900}
-    .footer{margin-top:22px; padding-top:16px; border-top:1px solid var(--line); color:var(--muted); font-size:13px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px}
-    .toast{position:fixed; left:50%; bottom:18px; transform:translateX(-50%); background:rgba(0,0,0,.70); border:1px solid rgba(255,255,255,.18); padding:12px 14px; border-radius:14px; display:none; z-index:999; max-width:min(680px, calc(100% - 24px))}
-  </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>SUNWAVE FEST 2026 — Sponsors Final Deck</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --orange:#FF8C42;
+  --ocean:#061423;
+  --sand:#F4E9D8;
+  --turq:#00C2C7;
+  --line:rgba(244,233,216,.16);
+  --shadow:0 22px 70px rgba(0,0,0,.55);
+  --r:24px;
+  --muted:rgba(244,233,216,.78);
+}
+body{
+  margin:0;
+  background:
+    radial-gradient(1200px 700px at 10% -10%, rgba(255,140,66,.18), transparent 60%),
+    radial-gradient(900px 650px at 86% 0%, rgba(0,194,199,.14), transparent 60%),
+    linear-gradient(180deg,#040A12,var(--ocean));
+  color:var(--sand);
+  font-family:Inter,system-ui,Arial;
+}
+.reveal{font-size:22px}
+.reveal .slides section{ text-align:left; }
+.reveal h1,h2,h3{font-family:"Bebas Neue",Inter;letter-spacing:1px;margin:0 0 12px}
+.reveal h1{font-size:76px; line-height:.95}
+.reveal h2{font-size:54px; line-height:1.0}
+.reveal p{line-height:1.32; margin:0 0 12px; color:rgba(244,233,216,.92)}
+.small{font-size:16px;color:var(--muted)}
+.xs{font-size:13px;color:rgba(244,233,216,.62)}
+.accent{color:var(--orange)}
+.turq{color:var(--turq)}
+
+.badge{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:10px 16px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.05);
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.35px;
+  font-size:13px;
+}
+.dot{
+  width:10px;height:10px;border-radius:99px;
+  background:var(--orange);
+  box-shadow:0 0 0 6px rgba(255,140,66,.16);
+}
+.card{
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  padding:20px;
+  background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));
+  box-shadow:var(--shadow);
+}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.kpi{
+  border:1px solid rgba(244,233,216,.14);
+  border-radius:18px;
+  background:rgba(255,255,255,.04);
+  padding:14px 14px 12px;
+}
+.kpi b{display:block;font-size:28px;letter-spacing:-.3px}
+.kpi span{display:block;text-transform:uppercase;font-size:13px;opacity:.75;font-weight:850;letter-spacing:.25px}
+.tag{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid rgba(244,233,216,.14);
+  background:rgba(255,255,255,.04);
+  font-size:12px;
+  font-weight:950;
+  letter-spacing:.35px;
+  text-transform:uppercase;
+  margin-right:8px;
+}
+.photo{
+  min-height:640px;
+  border-radius:var(--r);
+  background:
+    linear-gradient(90deg,rgba(6,20,35,.88),rgba(6,20,35,.25)),
+    linear-gradient(180deg, rgba(255,140,66,.12), transparent 60%),
+    var(--img) center/cover no-repeat;
+  padding:50px;
+  box-shadow:var(--shadow);
+  border:1px solid rgba(244,233,216,.14);
+}
+table{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  overflow:hidden;
+  border-radius:18px;
+  border:1px solid rgba(244,233,216,.16);
+  background:rgba(255,255,255,.03);
+  font-size:18px;
+}
+th,td{padding:12px 14px;border-bottom:1px solid rgba(244,233,216,.10);vertical-align:top}
+th{
+  text-align:left;
+  background:linear-gradient(90deg, rgba(255,140,66,.14), rgba(0,194,199,.08));
+  font-weight:950;
+  text-transform:uppercase;
+  letter-spacing:.35px;
+  font-size:13px;
+}
+tr:last-child td{border-bottom:0}
+.right{text-align:right}
+.good{color:#9ef0c8;font-weight:950}
+.warn{color:#ffd3a3;font-weight:950}
+
+.map{
+  border-radius:22px;
+  border:1px solid rgba(244,233,216,.14);
+  background:
+    radial-gradient(800px 420px at 15% 25%, rgba(255,140,66,.18), transparent 55%),
+    radial-gradient(700px 420px at 85% 35%, rgba(0,194,199,.14), transparent 55%),
+    rgba(255,255,255,.03);
+  padding:18px;
+}
+.mapGrid{
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap:14px;
+  align-items:stretch;
+}
+.mapCanvas{
+  border-radius:18px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  border:1px solid rgba(244,233,216,.12);
+  position:relative;
+  min-height:360px;
+  overflow:hidden;
+}
+.zone{
+  position:absolute;
+  border:1px solid rgba(244,233,216,.20);
+  border-radius:16px;
+  padding:10px 10px 8px;
+  background:rgba(6,20,35,.42);
+  backdrop-filter: blur(6px);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.25px;
+  text-transform:uppercase;
+}
+.zone b{display:block;font-size:13px;margin-bottom:2px}
+.zone span{display:block;font-size:11px;opacity:.78;font-weight:800;text-transform:none}
+.legend .kpi b{font-size:20px}
+@media (max-width: 1100px){
+  .grid2,.grid3,.mapGrid{grid-template-columns:1fr}
+  .reveal h1{font-size:60px}
+  .reveal h2{font-size:46px}
+}
+</style>
 </head>
+
 <body>
+<div class="reveal"><div class="slides">
 
-  <div class="nav">
-    <div class="navin">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <div>
-          <div id="brandName">Кирпич • Алматы</div>
-          <div class="muted" style="font-size:12px;font-weight:800">Фасадный кирпич • Доставка • Опт/Розница</div>
+<!-- 1 -->
+<section>
+  <div class="photo" style="--img:url('https://source.unsplash.com/1920x1080/?beach,festival,sunset,crowd')">
+    <span class="badge"><span class="dot"></span> Music • Sun • Waves</span>
+    <h1 style="margin-top:14px">SUNWAVE <span class="accent">FEST</span> 2026</h1>
+    <p class="small" style="max-width:980px">
+      Финальный deck для международных брендов. Премиальная серия beach-событий: закат → ночь, регулярность, измеримые KPI.
+    </p>
+    <div class="grid3" style="margin-top:14px;max-width:980px">
+      <div class="kpi"><b>24 даты</b><span>каждую ПТ/СБ</span></div>
+      <div class="kpi"><b>3–5 тыс</b><span>гостей / дата</span></div>
+      <div class="kpi"><b class="accent">#FF8C42</b><span>Sunset Orange</span></div>
+    </div>
+    <p class="xs" style="margin-top:10px">
+      Главный спонсор: <b>Red Bull</b>. Финтех-партнёр: <b>Kaspi</b>. Авто-партнёр: <b>BMW</b>.
+    </p>
+  </div>
+</section>
+
+<!-- 2 -->
+<section>
+  <h2>Вдохновение мира 2025</h2>
+  <div class="grid3">
+    <div class="card"><span class="tag">Ibiza</span><p><b>Sunset → Night</b><br/>свобода и вайб</p></div>
+    <div class="card"><span class="tag">Tomorrowland</span><p><b>Системность</b><br/>порядок, масштаб, сервис</p></div>
+    <div class="card"><span class="tag">Coachella</span><p><b>Lifestyle</b><br/>контент, арт, мода</p></div>
+    <div class="card"><span class="tag">Ultra</span><p><b>Ночь</b><br/>свет, звук, энергия</p></div>
+    <div class="card"><span class="tag">Boiler Room</span><p><b>Близость</b><br/>эффект «внутри тусовки»</p></div>
+  </div>
+  <p class="xs" style="margin-top:10px">
+    SUNWAVE — это лучший набор практик 2025, адаптированный под формат городского пляжа и регулярную сериальность.
+  </p>
+</section>
+
+<!-- 3 -->
+<section>
+  <h2>Формула SUNWAVE</h2>
+  <div class="card">
+    <p><b>Ibiza sunset</b> + <b>Coachella lifestyle</b> + <b>Ultra night energy</b> + <b>Tomorrowland системность</b> + <b>Boiler Room proximity</b></p>
+    <p class="accent"><b>= фестивальный сериал, который любят бренды</b></p>
+  </div>
+  <div class="grid3" style="margin-top:14px">
+    <div class="kpi"><b>Повторы</b><span>2–3 визита/лето</span></div>
+    <div class="kpi"><b>UGC</b><span>закат = пик контента</span></div>
+    <div class="kpi"><b>Измеримость</b><span>KPI + отчётность</span></div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section>
+  <div class="photo" style="--img:url('https://source.unsplash.com/1920x1080/?beach,sea,sunset,party')">
+    <span class="badge"><span class="dot"></span> Season format</span>
+    <h2 style="margin-top:10px">Сезон и регулярность</h2>
+    <div class="card" style="max-width:1000px;margin-top:14px">
+      <div class="grid3">
+        <div class="kpi"><b>1 июня – 31 августа</b><span>лето 2026</span></div>
+        <div class="kpi"><b>Каждую ПТ/СБ</b><span>24 даты (опция)</span></div>
+        <div class="kpi"><b>Peak: июль</b><span>макс. спрос</span></div>
+      </div>
+      <p class="xs" style="margin-top:10px">
+        Фактически в период ПТ/СБ получается 26 дат; чтобы выдержать обещание “24 даты”, убираем 2 наименее сильные даты июня без потери логики бренда.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section>
+  <h2>Аудитория и сегменты</h2>
+  <div class="grid3">
+    <div class="card">
+      <p><b>VIP (10–15%)</b><br/>столы/депозиты/сервис</p>
+      <p class="small">лучший обзор, отдельный вход, отдельный бар</p>
+    </div>
+    <div class="card">
+      <p><b>FAN / Middle (20–30%)</b><br/>апгрейд зона</p>
+      <p class="small">ближе к сцене, отдельная платформа, быстрый бар</p>
+    </div>
+    <div class="card">
+      <p><b>GENERAL (60–70%)</b><br/>главный трафик</p>
+      <p class="small">основной танцпол, бары, фудкорт, бренд-активации</p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <p class="small"><b>Для брендов:</b> VIP = премиум лиды, FAN = вовлечённость, GENERAL = охват и продажи.</p>
+  </div>
+</section>
+
+<!-- 6 -->
+<section>
+  <h2>Карта площадки и зоны брендов</h2>
+  <div class="map">
+    <div class="mapGrid">
+      <div class="mapCanvas">
+        <!-- zones -->
+        <div class="zone" style="left:18px;top:18px;width:42%">
+          <b>VIP Horizon</b><span>VIP вход • VIP bar • сервис</span>
+        </div>
+        <div class="zone" style="right:18px;top:18px;width:48%">
+          <b>Beach Drive by BMW</b><span>sunset line • фото • lounge</span>
+        </div>
+        <div class="zone" style="left:18px;bottom:18px;width:45%">
+          <b>Sunset Stage</b><span>LIVE прайм • закат • шоу</span>
+        </div>
+        <div class="zone" style="right:18px;bottom:18px;width:47%">
+          <b>Energy Arena by Red Bull</b><span>DJ night • drops • UGC</span>
+        </div>
+        <div class="zone" style="left:52%;top:46%;transform:translateX(-50%);width:46%">
+          <b>Kaspi Cashless</b><span>fast lane • QR • upgrade</span>
+        </div>
+        <div class="zone" style="left:18px;top:46%;width:30%">
+          <b>Hydration & Chill</b><span>water bar • refresh</span>
+        </div>
+        <div class="zone" style="right:18px;top:46%;width:30%">
+          <b>Main Bar</b><span>макс. оборот</span>
         </div>
       </div>
-
-      <div class="links">
-        <a href="#catalog">Каталог</a>
-        <a href="#calc">Калькулятор</a>
-        <a href="#delivery">Доставка</a>
-        <a href="#certs">Сертификаты</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Контакты</a>
-      </div>
-
-      <div style="display:flex; gap:10px; align-items:center;">
-        <a class="btn blue" id="waBtn" href="https://wa.me/77000000000" target="_blank" rel="noreferrer">💬 WhatsApp</a>
-        <a class="btn primary" href="#contact">📩 Получить прайс</a>
+      <div class="legend">
+        <div class="grid2">
+          <div class="kpi"><b>Red Bull</b><span>title / energy</span></div>
+          <div class="kpi"><b>Kaspi</b><span>cashless partner</span></div>
+          <div class="kpi"><b>BMW</b><span>auto lifestyle</span></div>
+          <div class="kpi"><b>Soft Drinks</b><span>hydration partner</span></div>
+        </div>
+        <p class="xs" style="margin-top:10px">
+          План даёт брендам “причины останавливаться”: зона → активность → контент → покупка.
+        </p>
       </div>
     </div>
   </div>
+</section>
 
-  <div class="wrap">
-
-    <!-- HERO -->
-    <div class="grid">
-      <div class="card col8">
-        <span class="pill">🧱 В наличии • Прайс за 1 минуту • Подбор под проект</span>
-        <h1>Фасадный кирпич<br/>продажа и доставка</h1>
-        <p class="muted" style="font-size:16px;margin:0">
-          Каталог по цветам и фактурам. Поможем рассчитать количество, подберём шов/раствор, отправим фото и видео со склада.
-        </p>
-        <div class="grid" style="margin-top:14px">
-          <div class="kpi col4"><span class="muted">Цена</span><strong>от ₸  ___ / шт</strong></div>
-          <div class="kpi col4"><span class="muted">Доставка</span><strong>Алматы и РК</strong></div>
-          <div class="kpi col4"><span class="muted">Срок</span><strong>1–3 дня</strong></div>
-        </div>
-
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px">
-          <a class="btn primary" href="#catalog">🧱 Смотреть каталог</a>
-          <button class="btn" id="copyPriceBtn">📋 Скопировать прайс-запрос</button>
-          <a class="btn blue" href="#calc">🧮 Рассчитать количество</a>
-        </div>
-
-        <p class="muted" style="margin:12px 0 0; font-size:13px">
-          *Этот сайт легко дополняется: фото товаров, фильтры, карточки объектов, подключение оплаты.
-        </p>
+<!-- 7 -->
+<section>
+  <h2>⚡ Red Bull — главный спонсор</h2>
+  <div class="card">
+    <p><b>Роль:</b> “Энергия фестиваля” — ночь, музыка, движение, драйв.</p>
+    <div class="grid2" style="margin-top:10px">
+      <div>
+        <p><span class="tag">ZONA</span> <b>Energy Arena by Red Bull</b></p>
+        <ul>
+          <li><b>DJ Drop Moment</b> (брендированный “момент перед дропом”)</li>
+          <li><b>Recharge Station</b> (зарядки + chill)</li>
+          <li><b>Energy Games</b> (скорость/реакция/баттлы)</li>
+          <li><b>Sampling Cold Cans</b> + QR розыгрыши</li>
+        </ul>
       </div>
-
-      <div class="card col4">
-        <div class="sectionTitle">
-          <h2>✅ Почему покупают у нас</h2>
-          <span class="tag">B2C / B2B</span>
-        </div>
-        <div style="display:grid; gap:10px; margin-top:12px">
-          <div class="kpi"><strong>Подбор</strong><span class="muted">по проекту и визуалу дома</span></div>
-          <div class="kpi"><strong>Расчёт</strong><span class="muted">количества + запас + шов</span></div>
-          <div class="kpi"><strong>Документы</strong><span class="muted">паспорт качества / сертификаты</span></div>
-        </div>
+      <div>
+        <p><span class="tag">CONTENT</span> UGC-механики</p>
+        <ul>
+          <li>slow-motion камера + branded frame</li>
+          <li>Reels/TikTok “Energy of the Sunset”</li>
+          <li>инфлюенс-сессии в Energy Arena</li>
+        </ul>
+        <div class="kpi" style="margin-top:10px"><b class="accent">KPI</b><span>контакты • охват • ER • UGC</span></div>
       </div>
     </div>
-
-    <!-- CATALOG -->
-    <div class="grid" id="catalog" style="margin-top:14px">
-      <div class="card col12">
-        <div class="sectionTitle">
-          <h2>🧱 Каталог фасадного кирпича</h2>
-          <span class="muted">Фильтры: цвет • фактура • формат</span>
-        </div>
-
-        <div class="filters">
-          <input id="q" placeholder="Поиск: красный, графит, клинкер…" />
-          <select id="color">
-            <option value="">Цвет: любой</option>
-            <option>Красный</option>
-            <option>Графит</option>
-            <option>Бежевый</option>
-            <option>Коричневый</option>
-            <option>Белый</option>
-            <option>Микс</option>
-          </select>
-          <select id="texture">
-            <option value="">Фактура: любая</option>
-            <option>Гладкий</option>
-            <option>Рваный</option>
-            <option>Состаренный</option>
-            <option>Рустик</option>
-          </select>
-          <select id="format">
-            <option value="">Формат: любой</option>
-            <option>1NF</option>
-            <option>0.7NF</option>
-            <option>Евро</option>
-          </select>
-        </div>
-
-        <div class="products" id="products">
-          <!-- Примеры карточек: заменишь названия/цены/параметры -->
-        </div>
-
-        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; align-items:center">
-          <button class="btn" id="loadMore">➕ Показать ещё</button>
-          <span class="muted mini">Добавь реальные фото: можно просто заменить блок “Фото” на <code>&lt;img src="..."&gt;</code></span>
-        </div>
-      </div>
-    </div>
-
-    <!-- CALCULATOR -->
-    <div class="grid" id="calc" style="margin-top:14px">
-      <div class="card col6">
-        <div class="sectionTitle">
-          <h2>🧮 Калькулятор количества</h2>
-          <span class="tag">м² → шт</span>
-        </div>
-        <p class="muted mini" style="margin-top:10px">
-          Введи площадь фасада (м²). Мы считаем примерно по расходу + запас 7%.
-          Для точного расчёта учитываем формат и толщину шва.
-        </p>
-
-        <div style="display:grid; gap:10px; margin-top:10px">
-          <input id="area" type="number" min="0" placeholder="Площадь фасада, м² (например 160)" />
-          <select id="consumption">
-            <option value="51">~51 шт/м² (1NF, стандарт)</option>
-            <option value="39">~39 шт/м² (Евро)</option>
-            <option value="62">~62 шт/м² (0.7NF)</option>
-          </select>
-          <button class="btn primary" id="calcBtn">Посчитать</button>
-          <div class="kpi">
-            <span class="muted">Результат</span>
-            <strong id="calcOut">—</strong>
-            <span class="muted mini" id="calcOut2"></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="card col6" id="delivery">
-        <div class="sectionTitle">
-          <h2>🚚 Доставка и оплата</h2>
-          <span class="tag">Алматы / РК</span>
-        </div>
-        <div style="display:grid; gap:10px; margin-top:12px">
-          <div class="kpi"><strong>Доставка</strong><span class="muted">по Алматы и области • межгород</span></div>
-          <div class="kpi"><strong>Оплата</strong><span class="muted">нал/безнал • счёт • договор</span></div>
-          <div class="kpi"><strong>Самовывоз</strong><span class="muted">со склада (укажи адрес)</span></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- CERTS -->
-    <div class="grid" id="certs" style="margin-top:14px">
-      <div class="card col12">
-        <div class="sectionTitle">
-          <h2>📄 Сертификаты и характеристики</h2>
-          <span class="muted">добавь сканы/фото</span>
-        </div>
-        <div class="two" style="margin-top:12px">
-          <div class="kpi">
-            <strong>Тех.параметры</strong>
-            <span class="muted">Марка прочности • морозостойкость • водопоглощение • плотность</span>
-          </div>
-          <div class="kpi">
-            <strong>Документы</strong>
-            <span class="muted">Сертификат соответствия • паспорт качества • протоколы</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- FAQ -->
-    <div class="grid" id="faq" style="margin-top:14px">
-      <div class="card col12 faq">
-        <div class="sectionTitle">
-          <h2>❓ Частые вопросы</h2>
-          <span class="muted">важно для доверия</span>
-        </div>
-
-        <div style="margin-top:12px">
-          <details>
-            <summary>Почему появляются высолы и как избежать?</summary>
-            <div class="muted mini" style="margin-top:10px">Правильный раствор/шов, защита кладки от дождя, качество воды и соблюдение технологии.</div>
-          </details>
-          <details>
-            <summary>Можно ли подобрать кирпич по фото дома?</summary>
-            <div class="muted mini" style="margin-top:10px">Да. Скинь фото фасада + желаемый стиль — предложим 3–5 вариантов и шов.</div>
-          </details>
-          <details>
-            <summary>Сколько кирпича нужно на м²?</summary>
-            <div class="muted mini" style="margin-top:10px">Зависит от формата и шва. В среднем: 1NF ~51 шт/м², евро ~39 шт/м².</div>
-          </details>
-        </div>
-      </div>
-    </div>
-
-    <!-- CONTACT -->
-    <div class="grid" id="contact" style="margin-top:14px">
-      <div class="card col12">
-        <div class="sectionTitle">
-          <h2>📩 Получить прайс / расчёт / консультацию</h2>
-          <span class="tag">Ответ 5–15 минут</span>
-        </div>
-
-        <div class="two" style="margin-top:12px">
-          <div>
-            <div style="display:grid; gap:10px">
-              <input id="name" placeholder="Имя" />
-              <input id="phone" placeholder="Телефон / WhatsApp" />
-              <textarea id="msg" placeholder="Что нужно? (цвет/формат/м²/город доставки)"></textarea>
-              <button class="btn primary" id="sendBtn">Отправить в WhatsApp</button>
-              <span class="muted mini">*Нажатие сформирует сообщение в WhatsApp. Можно подключить формы/CRM позже.</span>
-            </div>
-          </div>
-
-          <div>
-            <div class="kpi">
-              <strong>Контакты</strong>
-              <span class="muted">WhatsApp: <span id="phoneText">+7 (700) 000-00-00</span></span>
-              <span class="muted">Instagram: <span id="instaText">@yourbrick</span></span>
-              <span class="muted">Адрес склада: <span id="addrText">Алматы, …</span></span>
-              <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap">
-                <a class="btn blue" id="wa2" href="https://wa.me/77000000000" target="_blank" rel="noreferrer">💬 Написать в WhatsApp</a>
-                <button class="btn" id="copyReq">📋 Скопировать запрос</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="footer">
-          <div>© <span id="y"></span> Продажа фасадного кирпича</div>
-          <div class="muted">Сделано для заявок • SEO-ready • Каталог</div>
-        </div>
-      </div>
-    </div>
-
   </div>
+</section>
 
-  <div class="toast" id="toast"></div>
+<!-- 8 -->
+<section>
+  <h2>🏦 Kaspi — финтех-партнёр</h2>
+  <div class="card">
+    <p><b>Роль:</b> скорость, комфорт, cashless. Банк “делает фестиваль удобнее”.</p>
+    <div class="grid2" style="margin-top:10px">
+      <div>
+        <p><span class="tag">ZONA</span> <b>Kaspi Cashless Fast Lane</b></p>
+        <ul>
+          <li>отдельный вход Fast Entry</li>
+          <li>QR/NFC оплата на барах</li>
+          <li>VIP Upgrade Desk (апгрейды за оплату)</li>
+        </ul>
+      </div>
+      <div>
+        <p><span class="tag">MOTIVATION</span> промо</p>
+        <ul>
+          <li>кешбэк на билеты/бар</li>
+          <li>“Оплати — получи апгрейд”</li>
+          <li>активации “smart lifestyle”</li>
+        </ul>
+        <div class="kpi" style="margin-top:10px"><b class="turq">KPI</b><span>транзакции • регистрации • установки</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <script>
-    const $ = (id) => document.getElementById(id);
-    const toastEl = $("toast");
+<!-- 9 -->
+<section>
+  <h2>🚗 BMW — авто-партнёр</h2>
+  <div class="card">
+    <p><b>Роль:</b> премиальный lifestyle, свобода, закатный драйв.</p>
+    <div class="grid2" style="margin-top:10px">
+      <div>
+        <p><span class="tag">ZONA</span> <b>Beach Drive Experience by BMW</b></p>
+        <ul>
+          <li>2–4 авто на “sunset line”</li>
+          <li>Golden Hour фотозона</li>
+          <li>брендированный lounge + сервис</li>
+        </ul>
+      </div>
+      <div>
+        <p><span class="tag">ACTIVATION</span> лиды</p>
+        <ul>
+          <li>QR-лидформа + “VIP ride / shuttle”</li>
+          <li>VR test drive / digital test drive</li>
+          <li>инфлюенсеры и контент-съёмки</li>
+        </ul>
+        <div class="kpi" style="margin-top:10px"><b class="accent">KPI</b><span>лиды • тест-драйвы • brand love</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    function toast(msg){
-      toastEl.textContent = msg;
-      toastEl.style.display = "block";
-      clearTimeout(window.__t);
-      window.__t = setTimeout(()=> toastEl.style.display="none", 2600);
-    }
-    function copyText(text){
-      navigator.clipboard.writeText(text).then(()=>toast("✅ Скопировано")).catch(()=>toast("⚠️ Не удалось скопировать"));
-    }
+<!-- 10 -->
+<section>
+  <h2>🥤 Безалкогольные напитки</h2>
+  <div class="card">
+    <p><b>Роль:</b> забота, комфорт, “чистый” бренд-вайб, гидратация.</p>
+    <div class="grid2" style="margin-top:10px">
+      <div>
+        <p><span class="tag">ZONA</span> <b>Hydration & Chill</b></p>
+        <ul>
+          <li>water bar + refresh points</li>
+          <li>тень/пуфы/вода/зарядки</li>
+          <li>“Sunset Refresh Hour”</li>
+        </ul>
+      </div>
+      <div>
+        <p><span class="tag">KPI</span> простые и понятные</p>
+        <ul>
+          <li>выдачи/пробы</li>
+          <li>охват и упоминания</li>
+          <li>NPS (комфорт)</li>
+        </ul>
+        <div class="kpi" style="margin-top:10px"><b class="turq">Brand Safety</b><span>wellness и комфорт</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    $("y").textContent = new Date().getFullYear();
+<!-- 11 -->
+<section>
+  <h2>Бары и точки продаж</h2>
+  <div class="grid3">
+    <div class="card"><b>Main Bar</b><br/><span class="small">макс. оборот, 2–3 линии</span></div>
+    <div class="card"><b>Energy Point</b><br/><span class="small">быстрый товар, высокая частота</span></div>
+    <div class="card"><b>Hydration Bar</b><br/><span class="small">забота, комфорт, бренд safety</span></div>
+    <div class="card"><b>VIP Bar</b><br/><span class="small">премиум сервис, средний чек</span></div>
+    <div class="card"><b>Chill Cocktail</b><br/><span class="small">апсейл и атмосфера</span></div>
+  </div>
+  <p class="xs" style="margin-top:10px">
+    В логике 2025: бар — это не касса, а <b>бренд-опыт</b>.
+  </p>
+</section>
 
-    // ДАННЫЕ ТОВАРОВ (замени на свои)
-    const all = [
-      {name:"Клинкер Graphite", color:"Графит", texture:"Гладкий", format:"Евро", price: "₸ 520 / шт", pcsPerM2: 39},
-      {name:"Кирпич Red Classic", color:"Красный", texture:"Гладкий", format:"1NF", price: "₸ 390 / шт", pcsPerM2: 51},
-      {name:"Rustic Mix", color:"Микс", texture:"Рустик", format:"1NF", price: "₸ 450 / шт", pcsPerM2: 51},
-      {name:"Beige Antique", color:"Бежевый", texture:"Состаренный", format:"Евро", price: "₸ 560 / шт", pcsPerM2: 39},
-      {name:"Brown Rock", color:"Коричневый", texture:"Рваный", format:"1NF", price: "₸ 470 / шт", pcsPerM2: 51},
-      {name:"White Smooth", color:"Белый", texture:"Гладкий", format:"Евро", price: "₸ 590 / шт", pcsPerM2: 39},
-    ];
+<!-- 12 -->
+<section>
+  <h2>Прайм-моменты для контента</h2>
+  <div class="card">
+    <div class="grid3">
+      <div class="kpi"><b>18:30–20:30</b><span>Sunset (UGC peak)</span></div>
+      <div class="kpi"><b>21:00–23:00</b><span>Prime (LIVE/DJ)</span></div>
+      <div class="kpi"><b>23:00–01:00</b><span>After (Energy Arena)</span></div>
+    </div>
+    <p class="small" style="margin-top:10px">
+      Встроенные “brand moments” не мешают тусовке, а усиливают её — это стандарт лучших тусовок мира.
+    </p>
+  </div>
+</section>
 
-    let shown = 6;
+<!-- 13 -->
+<section>
+  <h2>Пакеты и ценники</h2>
+  <div class="card">
+    <table>
+      <thead>
+        <tr>
+          <th>Пакет</th>
+          <th>Партнёр</th>
+          <th>Ключевое право</th>
+          <th class="right">Цена за сезон</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Title Partner</b></td>
+          <td><b>Red Bull</b></td>
+          <td>Energy Arena + title-нейминг + топ-видимость + контент-план</td>
+          <td class="right"><b class="accent">180 000 000 ₸</b></td>
+        </tr>
+        <tr>
+          <td><b>Fintech Partner</b></td>
+          <td><b>Kaspi</b></td>
+          <td>Cashless Fast Lane + QR/NFC + upgrade mechanics</td>
+          <td class="right"><b>95 000 000 ₸</b></td>
+        </tr>
+        <tr>
+          <td><b>Auto Lifestyle Partner</b></td>
+          <td><b>BMW</b></td>
+          <td>Beach Drive Experience + sunset photo line + leads</td>
+          <td class="right"><b>120 000 000 ₸</b></td>
+        </tr>
+        <tr>
+          <td><b>Hydration Partner</b></td>
+          <td><b>Soft Drinks</b></td>
+          <td>Hydration & Chill + refresh points + brand safety</td>
+          <td class="right"><b>60 000 000 ₸</b></td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="xs" style="margin-top:10px">
+      В цену включены базовые продакшн-элементы зон. Сложные конструкции/VR/шоу-эффекты считаются отдельным бюджетом (по ТЗ).
+    </p>
+  </div>
+</section>
 
-    function render(){
-      const q = $("q").value.trim().toLowerCase();
-      const color = $("color").value;
-      const texture = $("texture").value;
-      const format = $("format").value;
+<!-- 14 -->
+<section>
+  <h2>Пакеты по датам (если бренд хочет “пилот”)</h2>
+  <div class="card">
+    <table>
+      <thead>
+        <tr>
+          <th>Формат</th>
+          <th>Что входит</th>
+          <th class="right">Цена</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Weekend Partner</b></td>
+          <td>брендирование уикенда (ПТ+СБ), зона + 2 контент-интеграции</td>
+          <td class="right"><b>18 000 000 ₸</b></td>
+        </tr>
+        <tr>
+          <td><b>Friday Takeover</b></td>
+          <td>пятница DJ Night: energy/UGC/fast sampling</td>
+          <td class="right"><b>7 500 000 ₸</b></td>
+        </tr>
+        <tr>
+          <td><b>Saturday Prime</b></td>
+          <td>суббота LIVE: VIP upgrade + premium moments</td>
+          <td class="right"><b>11 000 000 ₸</b></td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="xs" style="margin-top:10px">
+      Эти пакеты удобны для международных брендов: “пробный запуск” → масштабирование до сезона.
+    </p>
+  </div>
+</section>
 
-      let items = all.filter(p => {
-        const okQ = !q || (p.name.toLowerCase().includes(q) || p.color.toLowerCase().includes(q) || p.texture.toLowerCase().includes(q) || p.format.toLowerCase().includes(q));
-        const okC = !color || p.color === color;
-        const okT = !texture || p.texture === texture;
-        const okF = !format || p.format === format;
-        return okQ && okC && okT && okF;
-      });
+<!-- 15 -->
+<section>
+  <h2>Deliverables бренду</h2>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>Блок</th><th>Что отдаём</th><th class="right">KPI</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><b>On-site</b></td><td>зона, персонал, навигация, sampling/lead capture</td><td class="right">контакты/пробы/лиды</td></tr>
+        <tr><td><b>Digital</b></td><td>контент-план: Reels/TikTok/Stories + интеграции</td><td class="right">охват/ER/клики</td></tr>
+        <tr><td><b>PR</b></td><td>упоминания, партнёрские публикации, медиа-охват</td><td class="right">упоминания/медиа</td></tr>
+        <tr><td><b>Report</b></td><td>финальный отчёт: фото/видео архив + аналитика</td><td class="right">прозрачность</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 
-      items = items.slice(0, shown);
+<!-- 16 -->
+<section>
+  <h2>KPI-матрица по партнёрам</h2>
+  <div class="grid2">
+    <div class="card">
+      <p><b>Red Bull</b>: UGC + вовлечённость + sampling</p>
+      <p class="small">Фокус: ночь, контент, динамика</p>
+      <div class="kpi"><b class="accent">UGC / ER</b><span>главные метрики</span></div>
+    </div>
+    <div class="card">
+      <p><b>Kaspi</b>: транзакции + регистрации + установки</p>
+      <p class="small">Фокус: удобство, скорость, cashless</p>
+      <div class="kpi"><b class="turq">Conversions</b><span>главные метрики</span></div>
+    </div>
+    <div class="card">
+      <p><b>BMW</b>: лиды + тест-драйвы + brand love</p>
+      <p class="small">Фокус: premium lifestyle</p>
+      <div class="kpi"><b class="accent">Leads</b><span>главные метрики</span></div>
+    </div>
+    <div class="card">
+      <p><b>Soft Drinks</b>: выдачи + комфорт + brand safety</p>
+      <p class="small">Фокус: hydration & chill</p>
+      <div class="kpi"><b class="turq">NPS</b><span>главные метрики</span></div>
+    </div>
+  </div>
+</section>
 
-      $("products").innerHTML = items.map(p => `
-        <div class="p">
-          <div class="img">Фото товара</div>
-          <b>${p.name}</b>
-          <div class="muted mini">Цвет: ${p.color} • Фактура: ${p.texture} • Формат: ${p.format}</div>
-          <div class="muted mini">Расход: ~${p.pcsPerM2} шт/м²</div>
-          <div class="row">
-            <div class="price">${p.price}</div>
-            <button class="btn" onclick="ask('${p.name}')">💬 Запросить</button>
-          </div>
-        </div>
-      `).join("") || `<div class="muted">Ничего не найдено. Попробуй другой фильтр.</div>`;
-    }
+<!-- 17 -->
+<section>
+  <div class="photo" style="--img:url('https://source.unsplash.com/1920x1080/?concert,night,lights')">
+    <span class="badge"><span class="dot"></span> Brand Safety</span>
+    <h2 style="margin-top:10px">Сервис и безопасность</h2>
+    <div class="card" style="max-width:1000px;margin-top:14px">
+      <div class="grid3">
+        <div class="kpi"><b>Контроль входа</b><span>fast lane + age policy</span></div>
+        <div class="kpi"><b>Медпункт</b><span>медицина и протоколы</span></div>
+        <div class="kpi"><b>Комфорт</b><span>вода • тень • навигация</span></div>
+      </div>
+      <p class="xs" style="margin-top:10px">
+        Международные бренды ценят: предсказуемость, безопасность, прозрачность KPI и качество продакшна.
+      </p>
+    </div>
+  </div>
+</section>
 
-    window.ask = (productName) => {
-      const template = `Здравствуйте! Интересует фасадный кирпич: ${productName}.
-Нужен расчёт и прайс. Площадь фасада: ___ м². Доставка: ___.`;
-      copyText(template);
-      toast("📋 Запрос скопирован — вставь в WhatsApp");
-    };
+<!-- 18 -->
+<section>
+  <h2>Почему это “международный уровень”</h2>
+  <div class="grid3">
+    <div class="card"><b>Регулярность</b><br/><span class="small">платформа на сезон, не разовая вспышка</span></div>
+    <div class="card"><b>Контент</b><br/><span class="small">закат = самый дорогой момент</span></div>
+    <div class="card"><b>Бренд-опыт</b><br/><span class="small">зоны создают эмоции, а не шум</span></div>
+    <div class="card"><b>Сервис</b><br/><span class="small">VIP без пафоса — комфорт и вид</span></div>
+    <div class="card"><b>Измеримость</b><br/><span class="small">KPI + отчётность</span></div>
+  </div>
+</section>
 
-    ["q","color","texture","format"].forEach(id => $(id).addEventListener("input", () => { shown = 6; render(); }));
-    $("loadMore").addEventListener("click", () => { shown += 6; render(); toast("➕ Показали больше"); });
+<!-- 19 -->
+<section>
+  <h2>Финальный оффер</h2>
+  <div class="card">
+    <p><b>Red Bull</b> — главный спонсор сезона: владеет ночной энергией и контентом.</p>
+    <p><b>Kaspi</b> — делает фестиваль удобным: cashless и fast-lane.</p>
+    <p><b>BMW</b> — задаёт премиальный lifestyle: sunset line, leads, experience.</p>
+    <p class="accent"><b>Цель:</b> бренд становится частью лучшего момента лета, а не просто размещением.</p>
+  </div>
+</section>
 
-    // калькулятор
-    $("calcBtn").addEventListener("click", () => {
-      const area = Number($("area").value || 0);
-      const cons = Number($("consumption").value || 51);
-      if(area <= 0){ toast("Введите площадь фасада (м²)"); return; }
-      const base = area * cons;
-      const reserve = Math.ceil(base * 0.07);
-      const total = Math.ceil(base + reserve);
-      $("calcOut").textContent = `${total.toLocaleString("ru-RU")} шт`;
-      $("calcOut2").textContent = `База: ${Math.ceil(base)} шт + запас 7%: ${reserve} шт`;
-      toast("✅ Посчитано");
-    });
+<!-- 20 -->
+<section>
+  <div class="photo" style="--img:url('https://source.unsplash.com/1920x1080/?fireworks,beach,night,festival')">
+    <span class="badge"><span class="dot"></span> Music • Sun • Waves</span>
+    <h1 style="margin-top:14px">SUNWAVE <span class="accent">FEST</span> 2026</h1>
+    <p class="small">Готово для переговоров с международными брендами.</p>
+    <div class="grid3" style="margin-top:14px;max-width:980px">
+      <div class="kpi"><b>Red Bull</b><span>Title Partner</span></div>
+      <div class="kpi"><b>Kaspi</b><span>Cashless Partner</span></div>
+      <div class="kpi"><b>BMW</b><span>Auto Lifestyle</span></div>
+    </div>
+    <p class="xs" style="margin-top:10px">Контакты: (вставьте имя/телефон/email)</p>
+  </div>
+</section>
 
-    // WhatsApp отправка
-    function buildMessage(){
-      const name = $("name").value.trim();
-      const phone = $("phone").value.trim();
-      const msg = $("msg").value.trim();
-      const text =
-`Здравствуйте! Меня зовут ${name || "—"}.
-Телефон: ${phone || "—"}.
-Запрос: ${msg || "Нужен прайс и консультация по фасадному кирпичу."}
+</div></div>
 
-Пожалуйста, отправьте: прайс, наличие, фото и условия доставки.`;
-      return text;
-    }
-
-    // Номер WhatsApp (замени!)
-    const waNumber = "77000000000"; // формат: 7701...
-    const waUrl = () => "https://wa.me/" + waNumber + "?text=" + encodeURIComponent(buildMessage());
-
-    $("sendBtn").addEventListener("click", () => {
-      window.open(waUrl(), "_blank", "noreferrer");
-    });
-
-    $("copyReq").addEventListener("click", () => copyText(buildMessage()));
-    $("copyPriceBtn").addEventListener("click", () => copyText("Здравствуйте! Нужен прайс на фасадный кирпич. Есть ли в наличии? Доставка куда?"));
-    // sync WA buttons
-    $("waBtn").href = "https://wa.me/" + waNumber;
-    $("wa2").href = "https://wa.me/" + waNumber;
-
-    render();
-  </script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+<script>
+Reveal.initialize({hash:true,transition:"fade",slideNumber:true,backgroundTransition:"fade"});
+</script>
 </body>
 </html>
